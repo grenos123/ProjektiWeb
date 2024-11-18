@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #c0c4c5, #cfcdbb);
+    background: linear-gradient(to bottom, #c0c4c5, #cdcbbd);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +59,7 @@ body {
     margin: 0; 
   }
   
-  
+
   button {
     background: #2f80ed;
     color: white;
