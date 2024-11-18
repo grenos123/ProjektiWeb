@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #c0c4c5, #cfcdbb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+  }
+  
+  .login-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .login-form h2 {
+    margin-bottom: 1rem;
+    color: #060602;
+    font-size: 1.8rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .show-password {
+    display: flex; 
+    align-items: center;
+    gap: 0.4rem; 
+    margin-top: 0.5rem;
+  }
+  
+  .show-password input[type="checkbox"] {
+    margin: 0;
+    width: auto; 
+    height: auto;
+  }
+  
+  .show-password label {
+    font-size: 0.9rem; 
+    color: #555; 
+    margin: 0; 
+  }
+  
+  
+  button {
+    background: #2f80ed;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    background: #1c5fc7;
+  }
+  
+  .links {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .links a {
+    display: block;
+    color: #2f80ed;
+    text-decoration: none;
+    margin-top: 0.5rem;
+  }
+  
+  .links a span {
+    font-weight: bold;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
