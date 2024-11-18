@@ -1,8 +1,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #c0c4c5, #cfcdbb);
-    background: linear-gradient(to bottom, #c0c4c5, #cdcbbd);
+    background-image: url("images/reg-login-pic.jpg");
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
