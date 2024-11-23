@@ -42,26 +42,6 @@ body {
     outline: none;
   }
   
-  .show-password {
-    display: flex; 
-    align-items: center;
-    gap: 0.4rem; 
-    margin-top: 0.5rem;
-  }
-  
-  .show-password input[type="checkbox"] {
-    margin: 0;
-    width: auto; 
-    height: auto;
-  }
-  
-  .show-password label {
-    font-size: 0.9rem; 
-    color: #555; 
-    margin: 0; 
-  }
-  
-
   button {
     background: #2f80ed;
     color: white;
