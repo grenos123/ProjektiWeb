@@ -35,6 +35,7 @@ body{
     margin: 10px;
     width: 200px;
     text-align: center;
+    transition: transform 0.2s, background-color 0.2s;
     
 
 }
@@ -51,4 +52,8 @@ body{
 .car-box p{
     font-size: 13px;
     color: #555;
+}
+.car-box:hover {
+    transform: scale(1.1);
+    background-color: bisque;
 }
