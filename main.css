@@ -35,6 +35,7 @@ body{
     margin: 10px;
     width: 200px;
     text-align: center;
+    
 
 }
 .car-box img{
@@ -46,4 +47,8 @@ body{
     color: #333;
 
 
+}
+.car-box p{
+    font-size: 13px;
+    color: #555;
 }
