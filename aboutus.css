@@ -41,7 +41,7 @@ body {
 }
 .under h2 {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0 0 20px 0;
     color: seagreen;
 }
 .about {
@@ -56,4 +56,13 @@ body {
     display: flex;
     justify-content: center;
     padding: 8px;
+}
+.map-container {
+    text-align: center;
+    margin: 20px 0;
+}
+iframe {
+    width: 100%;
+    height: 400px;
+    display: none; 
 }
