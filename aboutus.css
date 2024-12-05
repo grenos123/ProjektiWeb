@@ -75,3 +75,14 @@ iframe {
     height: 400px;
     display: none; 
 }
+.faq{
+    text-align: left;
+    margin: 20px auto;
+    width: 80%;
+}
+.faq line{
+    border: 0;
+    height: 2px;
+    margin: 15px auto;
+    width: 50%;
+}
