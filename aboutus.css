@@ -44,6 +44,15 @@ body {
     margin-bottom: 0 0 20px 0;
     color: seagreen;
 }
+.blog{
+    text-align:left;
+    margin:20px auto;
+    width: 80%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 8px rgba(0,0,0,0.1);
+    
+}
 .about {
     font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
