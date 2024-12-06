@@ -78,7 +78,10 @@ body {
     background-color: seagreen;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+}
+.hero a{
+    text-decoration: none;
+    color: white;
 }
 
 .hero button:hover {
