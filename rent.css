@@ -4,6 +4,8 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     background-image: url("image/reg-login-pic.jpg");
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
