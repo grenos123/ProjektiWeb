@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url("image/reg-login-pic.jpg");
+    background-image: url("images/reg-login-pic.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
