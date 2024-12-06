@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervimi i Makinës</title>
+    <link rel="stylesheet" href="rent.css">
+</head>
+<body>
+    <div class="reservation-container">
+        <h2>Rezervo një Makinë</h2>
+        <form class="reservation-form" action="/submit-reservation" method="POST">
+            <div class="form-group">
+                <label for="firstName">Emri</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Shkruani emrin tuaj" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Mbiemri</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Shkruani mbiemrin tuaj" required>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Numri i Telefonit</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Shkruani numrin tuaj të telefonit" required>
+            </div>
+            <div class="form-group">
+                <label for="pickupLocation">Vendi i Marrjes së Makinës</label>
+                <select id="pickupLocation" name="pickupLocation" required>
+                    <option value="">Zgjidh vendin</option>
+                    <option value="prishtine-a">Prishtinë A</option>
+                    <option value="prishtine-b">Prishtinë B</option>
+                    <option value="lipjan">Lipjan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="startDate">Data e Marrjes</label>
+                <input type="date" id="startDate" name="startDate" required>
+            </div>
+            <div class="form-group">
+                <label for="returnDate">Data e Kthimit</label>
+                <input type="date" id="returnDate" name="returnDate" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Çmimi(above 3 days you pay 10% less)</label>
+                <input type="number" id="price" name="price" placeholder="Çmimi varet nga zgjidhja e makinës" required>
+            </div>
+            <button type="submit" class="btn">Rezervo</button>
+        </form>
+    </div>
+</body>
+</html>
