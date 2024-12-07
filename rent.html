@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rezervimi i Makinës</title>
     <link rel="stylesheet" href="rent.css">
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            const name = document.getElementById("firstName").value;
+            const lastname = document.getElementById("lastName").value;
+            const phoneNumber = document.getElementById("phoneNumber").value;
+            const email = document.getElementById("email").value;
+            
+            if (name != null || lastname != null || phoneNumber != null || email != null) {
+                alert("Data submitted, an email will be sent to you to confirm!");
+            }
+            
+           
+        }
+    </script>
+    
 </head>
 <body>
     <div class="navbar">
@@ -16,7 +32,7 @@
     </div>
     <div class="reservation-container">
         <h2>Reserve your Rental</h2>
-        <form class="reservation-form" action="/submit-reservation" method="POST">
+        <form class="reservation-form" method="POST" onsubmit="submitForm(event)">
             <div class="form-group">
                 <label for="firstName">First Name</label>
                 <input type="text" id="firstName" name="firstName" placeholder="Your first name..." required>
