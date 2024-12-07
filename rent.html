@@ -15,42 +15,42 @@
         <a href="login.html">Login</a>
     </div>
     <div class="reservation-container">
-        <h2>Rezervo një Makinë</h2>
+        <h2>Reserve your Rental</h2>
         <form class="reservation-form" action="/submit-reservation" method="POST">
             <div class="form-group">
-                <label for="firstName">Emri</label>
-                <input type="text" id="firstName" name="firstName" placeholder="Shkruani emrin tuaj" required>
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Your first name..." required>
             </div>
             <div class="form-group">
-                <label for="lastName">Mbiemri</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Shkruani mbiemrin tuaj" required>
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Your last name..." required>
             </div>
             <div class="form-group">
-                <label for="phoneNumber">Numri i Telefonit</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Shkruani numrin tuaj të telefonit" required>
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Your Phone Number..." required>
             </div>
             <div class="form-group">
-                <label for="pickupLocation">Vendi i Marrjes së Makinës</label>
+                <label for="pickupLocation">Pickup Location</label>
                 <select id="pickupLocation" name="pickupLocation" required>
-                    <option value="">Zgjidh vendin</option>
+                    <option value="">↓ Choose Location </option>
                     <option value="prishtine-a">Prishtinë A</option>
                     <option value="prishtine-b">Prishtinë B</option>
                     <option value="lipjan">Lipjan</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="startDate">Data e Marrjes</label>
+                <label for="startDate">Pickup Date</label>
                 <input type="date" id="startDate" name="startDate" required>
             </div>
             <div class="form-group">
-                <label for="returnDate">Data e Kthimit</label>
+                <label for="returnDate">Dropoff Date</label>
                 <input type="date" id="returnDate" name="returnDate" required>
             </div>
             <div class="form-group">
-                <label for="price">Çmimi(above 3 days you pay 10% less)</label>
-                <input type="number" id="price" name="price" placeholder="Çmimi varet nga zgjidhja e makinës" required>
+                <label for="price">Day(above 3 days you pay 10% less)</label>
+                <input type="number" id="price" name="price" placeholder="Price varies from car selected!" required>
             </div>
-            <button type="submit" class="btn">Rezervo</button>
+            <button type="submit" class="btn">Reserve</button>
         </form>
     </div>
     <div class="under">
