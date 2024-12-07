@@ -70,6 +70,10 @@ body {
     margin-bottom: 1rem; 
     text-align: left;
 }
+.form-group p{
+    font-size: 13px;
+    text-align: right;
+}
 
 .form-group label {
     display: block;
