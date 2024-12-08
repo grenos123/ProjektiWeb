@@ -21,6 +21,9 @@ body{
     text-decoration: none;
     padding: 5px;
 }
+.navbar a.current-page{
+    color: bisque;
+}
 .main{
     display: flex;
     flex-wrap: wrap;
