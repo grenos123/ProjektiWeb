@@ -1,95 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register form</title>
-    <link rel="stylesheet" href="register.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register form</title>
+  <link rel="stylesheet" href="register.css">
 </head>
 <body>
-    <div class="register-container">
-        <form class="register-form">
-          <h2>Register</h2>
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter your username" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter your password" required>
-          </div>
-          <div class="form-group">
-            <label for="confirm-password">Confirm Password</label>
-            <input type="password" id="confirm-password" placeholder="Confirm your password" required>
-          </div>
-          <button type="submit">Register</button>
-        </form>
-        <p class="login-redirect">
-          Already have an account? <a href="login.html">Login now</a>
-        </p>
+  <div class="register-container">
+    <form id="registerForm">
+      <h2>Register</h2>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" required>
+        <div id="usernameError" class="error-message" style="display: none;"></div>
       </div>
-      <script src="register.js">
-        document.getElementById("registerForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <div id="emailError" class="error-message" style="display: none;"></div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <div id="passwordError" class="error-message" style="display: none;"></div>
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+        <div id="confirmPasswordError" class="error-message" style="display: none;"></div>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login now</a></p>
+  </div>
 
-    const username = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-    const confirmPassword = document.getElementById("confirm-password").value.trim();
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const confirmPassword = document.getElementById("confirm-password").value.trim();
 
-    const usernameError = document.getElementById("usernameError");
-    const emailError = document.getElementById("emailError");
-    const passwordError = document.getElementById("passwordError");
-    const confirmPasswordError = document.getElementById("confirmPasswordError");
+      const usernameError = document.getElementById("usernameError");
+      const emailError = document.getElementById("emailError");
+      const passwordError = document.getElementById("passwordError");
+      const confirmPasswordError = document.getElementById("confirmPasswordError");
 
-    let isValid = true;
-
-    if (username.length < 3) {
+      let isValid = true;
+      if (username.length < 3) {
         usernameError.textContent = "Username must be at least 3 characters.";
         usernameError.style.display = "block";
         isValid = false;
-    } else {
+      } else {
         usernameError.style.display = "none";
-    }
+      }
 
-    if (!validateEmail(email)) {
+      if (!validateEmail(email)) {
         emailError.textContent = "Please enter a valid email address.";
         emailError.style.display = "block";
         isValid = false;
-    } else {
+      } else {
         emailError.style.display = "none";
-    }
+      }
 
-    if (password.length < 6) {
+      if (password.length < 6) {
         passwordError.textContent = "Password must be at least 6 characters.";
         passwordError.style.display = "block";
         isValid = false;
-    } else {
+      } else {
         passwordError.style.display = "none";
-    }
+      }
 
-    if (password !== confirmPassword) {
+      if (password !== confirmPassword) {
         confirmPasswordError.textContent = "Passwords do not match.";
         confirmPasswordError.style.display = "block";
         isValid = false;
-    } else {
+      } else {
         confirmPasswordError.style.display = "none";
-    }
+      }
+      if (isValid) {
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+        localStorage.setItem("email", email);
 
-    if (isValid) {
         alert("Registration successful!");
+        window.location.href = "login.html"; 
+      }
+    });
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
     }
-});
-
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-      </script>
+  </script>
 </body>
 </html>
