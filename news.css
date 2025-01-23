@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.navbar b {
+    color: seagreen;
+    font-size: 18px;
+    text-decoration: underline overline;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.navbar a:hover {
+    color: #ddd;
+}
+.under {
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px;
+    color: white;
+    margin-top: 80px;
+}
+.under p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin: 5px 0;
+    color: white;
+}
+.under h2 {
+    font-size: 20px;
+    margin-bottom: 0 0 20px 0;
+    color: seagreen;
+}
+
+.hero {
+    background-image: url('images/herohome.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero p {
+    font-size: 24px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.hero button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: seagreen;
+    border: none;
+    border-radius: 5px;
+}
+.hero a{
+    text-decoration: none;
+    color: white;
+}
+
+.hero button:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+.why-choose-us {
+    background-color: #f9f9f9;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.why-choose-us h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.why-box {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.feature {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature h4 {
+    font-size: 18px;
+    color: seagreen;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 14px;
+    color: #555;
+}
+.reviews {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.reviews h3 {
+    color: #333;
+
+}
+
+.review-box {
+    background-color: antiquewhite;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    
+}
+
+.review-box p {
+    font-size: 14px;
+    color: #555;
+}
+
