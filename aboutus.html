@@ -17,19 +17,48 @@
                 mapsh.style.display = 'block';
             }
         }
-         
+        function validateContactForm(event) {
+        event.preventDefault(); 
+        
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        
+        if (name === "") {
+            alert("Please enter your name");
+            return;
+    }
+    if (email === "" || !validateEmail(email)) {
+        alert("Please enter a valid email address");
+        return;
+    }
+    
+    if (message === "") {
+        alert("Please enter your message");
+        return;
+    }
+    
+    alert("Form submitted successfully");
+    document.getElementById("contactForm").reset(); 
+}
+
+function validateEmail(email) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+}
+
     </script>
 </head>
 <body>
     <div class="navbar">
-        <a href="home.html"><b>Rent-A-Car02</b></a>
+        <a href="home.html"><b>Swift Rentals</b></a>
         <a href="home.html">Home</a>
         <a href="main.html">Rentals</a>
-        <a href="aboutus.html">About Us</a>
+        <a href="aboutus.html" class="current-page">About Us</a>
         <a href="login.html">Login</a>
     </div>
     <div class="about">
-        <h2>Welcome to Rent-A-Car02</h2>
+        <h2>Welcome to SwiftRentals2</h2>
         <p>We specialize in offering a diverse <a href="main.html">fleet</a> of vehicles, suiting any occasion, from your compact hatchbacks for daily commutes to luxurious sedans to meet your needs.</p>
         <p>Whether you're traveling for business or simply just wanting a temporary ride, we are here to ensure that your journey is smooth, all with affordable pricings!</p>
         <b>You can find us in the following locations: </b>
@@ -67,8 +96,26 @@
         <p>Explore the hidden gems of Kosovo with our cars. Discover why it's the best way to get around M.....</p> 
         <a href="https://funkytours.com/must-visit-while-in-kosovo/">Read More</a>
     </div>
-    <div class="under">
-        <h2>Rent-A-Car02</h2>
+    <div class="contact-form">
+        <div class="contact-form">
+        <p>Have any questions?</p>
+        <h3>Contact Us</h3>
+        <form id="contactForm" onsubmit="validateContactForm(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
+        <div class="under">
+        <h2>Swift Rentals</h2>
         <p>Your go-to rental stop in ALL of Kosovo</p>
         <br>
         <p>Serving you with the best car rentals, reliable customer service, and unbeatable prices.</p>

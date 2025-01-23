@@ -28,6 +28,9 @@ body {
 .navbar a:hover {
     color: #ddd;
 }
+.navbar a.current-page{
+    color: bisque;
+}
 .under {
     display: flex;
     background-color: black;
