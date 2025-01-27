@@ -4,28 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slider</title>
-  </head>
-  <body>
-  <div class="navbar">
-    <a href="home.html"><b>Rent-A-Car02</b></a>
-    <a href="home.html">Home</a>
-    <a href="main.html">Rentals</a>
-    <a href="aboutus.html">About Us</a>
-    <a href="contactus.html">Contact Us</a>
-    <a href="news.html" class="current-page">News</a>
-    <a href="login.html">Login</a>
-</div>
-</body>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       background-color: #f0f0f0;
+    }
+    .coming-soon {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      position: relative;
+    }
+    .coming-soon::before,
+    .coming-soon::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 5px;
+      background-color: #ff6347;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .coming-soon::before {
+      left: -60px;
+    }
+    .coming-soon::after {
+      right: -60px;
     }
     .slider {
       position: relative;
@@ -36,8 +50,8 @@
       border-radius: 10px;
       background-color: #fff;
     }
-    .navbar a.current-page{
-    color: bisque;
+    .navbar a.current-page {
+      color: bisque;
     }
     .slides {
       display: flex;
@@ -74,11 +88,12 @@
   </style>
 </head>
 <body>
+  <div class="coming-soon">Coming Soon...</div>
   <div class="slider">
     <div class="slides">
-      <div class="slide"><img src="Screenshoot_1.png" alt="Slide 1"></div>
-      <div class="slide"><img src="Screenshoot_2.png" alt="Slide 2"></div>
-      <div class="slide"><img src="Screenshoot_4.png" alt="Slide 3"></div>
+      <div class="slide"><img src="images/Screenshot_1.png" alt="Slide 1"></div>
+      <div class="slide"><img src="images/Screenshot_2.png" alt="Slide 2"></div>
+      <div class="slide"><img src="images/Screenshot_4.png" alt="Slide 3"></div>
     </div>
     <div class="controls">
       <button class="control prev">&#9664;</button>
