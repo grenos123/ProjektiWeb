@@ -1,27 +1,50 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+class Database {
+    private $conn;
 
-    $conn = new mysqli('localhost', 'root', '', 'registrationfinal');
+    public function __construct($host, $user, $password, $dbname) {
+        $this->conn = new mysqli($host, $user, $password, $dbname);
+        if ($this->conn->connect_error) {
+            die('Connection failed: ' . $this->conn->connect_error);
+        }
+    }
 
-    if ($conn->connect_error) {
-        die('Connection failed: ' . $conn->connect_error);
-    } else {
-        $stmt = $conn->prepare("SELECT * FROM registrationfinal WHERE email = ? AND password = ?");
+    public function prepare($query) {
+        return $this->conn->prepare($query);
+    }
+
+    public function close() {
+        $this->conn->close();
+    }
+}
+
+class User {
+    private $db;
+
+    public function __construct($db) {
+        $this->db = $db;
+    }
+
+    public function login($email, $password) {
+        $stmt = $this->db->prepare("SELECT * FROM registrationfinal WHERE email = ? AND password = ?");
         $stmt->bind_param("ss", $email, $password);
-
         $stmt->execute();
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            echo "<script>alert('Login successful!');</script>";
+            echo "<script>alert('Login successful!'); window.location.href='main.html';</script>";
         } else {
-            echo "<script>alert('Invalid email or password.');';</script>";
+            echo "<script>alert('Invalid email or password'); window.location.href='login.html';</script>";
         }
 
         $stmt->close();
-        $conn->close();
     }
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $db = new Database('localhost', 'root', '', 'registrationfinal');
+    $user = new User($db);
+    $user->login($_POST['email'], $_POST['password']);
+    $db->close();
 }
 ?>
