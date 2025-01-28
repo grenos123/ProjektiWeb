@@ -81,14 +81,7 @@
       } else {
         confirmPasswordError.style.display = "none";
       }
-      if (isValid) {
-        localStorage.setItem("username", username);
-        localStorage.setItem("password", password);
-        localStorage.setItem("email", email);
-
-        alert("Registration successful!");
-        window.location.href = "login.html"; 
-      }
+      
     });
 
     function validateEmail(email) {

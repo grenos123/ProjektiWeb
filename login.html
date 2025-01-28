@@ -54,17 +54,7 @@
         passwordError.style.display = "none";
       }
 
-      if (isValid) {
-        const storedEmail = localStorage.getItem("email");
-        const storedPassword = localStorage.getItem("password");
-
-        if (email === storedEmail && password === storedPassword) {
-          alert("Login successful!");
-          window.location.href = "home.html"; 
-        } else {
-          alert("Invalid credentials. Please try again.");
-        }
-      }
+  
     });
 
     function validateEmail(email) {
