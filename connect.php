@@ -14,7 +14,7 @@
             $stmt->bind_param("sss", $username, $email, $password); 
 
             if ($stmt->execute()) {
-                echo "<script>alert('Registration successful!');</script>";
+                echo "<script>alert('Registration successful!'); window.location.href='login.html';</script>";
             }else {
                 echo "Error: " . $stmt->error;
             }
