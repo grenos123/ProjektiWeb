@@ -1,4 +1,5 @@
 <?php
+session_start();
 class Database {
     private $conn;
 
@@ -34,7 +35,7 @@ class User {
         $stmt->bind_param("sss", $username, $email, $password);
 
         if ($stmt->execute()) {
-            
+            $_SESSION['username']=$username;
             echo "<script>alert('Registration successful!'); window.location.href='login.html';</script>";
 
 
