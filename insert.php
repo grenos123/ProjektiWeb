@@ -5,9 +5,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $marka = $_POST["brand"];
     $sql = "INSERT INTO veturat (emri, cmimi ,viti) VALUES ('$emri', '$marka')";
     if ($conn->query($sql)) {
-        echo "Sukses";
+        echo "Success";
     } else {
-        echo "Gabim: " . $conn->error;
+        echo "Error: " . $conn->error;
     }
 }
 ?>

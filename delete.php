@@ -8,9 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $viti= $_POST["year"];
     $sql = "UPDATE veturat SET emri='$emri', marka='$marka' , cmimi='$cmimi' , viti='$viti' WHERE id=$id";
     if ($conn->query($sql)) {
-        echo "Sukses";
+        echo "Success";
     } else {
-        echo "Gabim: " . $conn->error;
+        echo "Error " . $conn->error;
     }
 }
 ?>
