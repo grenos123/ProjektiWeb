@@ -18,5 +18,127 @@
         <a href="logout.php">Logout</a>
     </div>
     <iframe src="slider.html" width="100%" height="500px" style="border: none;"></iframe>
+    <h2>Menaxhimi i Veturave</h2>
+<input type="hidden" id="editId">
+<input type="text" id="carName" placeholder="Modeli i Veturës">
+<input type="text" id="carBrand" placeholder="Marka">
+<input type="number" id="carYear" placeholder="Viti i Prodhimit">
+<input type="number" id="carPrice" placeholder="Çmimi i Qirasë">
+<select id="carStatus">
+    <option value="disponueshme">Disponueshme</option>
+    <option value="e rezervuar">E rezervuar</option>
+    <option value="ne mirembajtje">Në mirëmbajtje</option>
+</select>
+<button onclick="createCar()">Shto Veturen</button>
+<button onclick="updateCar()" id="updateBtn" style="display:none;">Përditëso Veturen</button>
+<script>
+    function fetchCars() {
+    fetch("fetch.php")
+        .then(response => response.json())
+        .then(data => {
+            const carTable = document.getElementById("carTable");
+            carTable.innerHTML = "";
+            data.forEach(car => {
+                carTable.innerHTML += `
+                    <tr>
+                        <td>${car.emri}</td>
+                        <td>${car.marka}</td>
+                        <td>${car.viti}</td>
+                        <td>${car.cmimi} €</td>
+                        <td>${car.statusi}</td>
+                        <td>
+                            <button onclick="setEditCar(${car.id}, '${car.emri}', '${car.marka}', ${car.viti}, ${car.cmimi}, '${car.statusi}')">Edito</button>
+                            <button onclick="deleteCar(${car.id})">Fshi</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        })
+        .catch(error => console.error('Gabim gjatë marrjes së të dhënave:', error));
+}
+
+function createCar() {
+    const name = document.getElementById("carName").value.trim();
+    const brand = document.getElementById("carBrand").value.trim();
+    const year = document.getElementById("carYear").value;
+    const price = document.getElementById("carPrice").value;
+    const status = document.getElementById("carStatus").value;
+    
+    if (!name || !brand || !year || !price || !status) {
+        alert("Ju lutem plotësoni të gjitha fushat!");
+        return;
+    }
+
+    fetch("insert.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `name=${encodeURIComponent(name)}&brand=${encodeURIComponent(brand)}&year=${encodeURIComponent(year)}&price=${encodeURIComponent(price)}&status=${encodeURIComponent(status)}`
+    })
+    .then(() => {
+        fetchCars();
+        document.getElementById("carName").value = "";
+        document.getElementById("carBrand").value = "";
+        document.getElementById("carYear").value = "";
+        document.getElementById("carPrice").value = "";
+        document.getElementById("carStatus").value = "disponueshme";
+    })
+    .catch(error => console.error('Gabim gjatë shtimit të veturës:', error));
+}
+
+function setEditCar(id, name, brand, year, price, status) {
+    document.getElementById("carName").value = name;
+    document.getElementById("carBrand").value = brand;
+    document.getElementById("carYear").value = year;
+    document.getElementById("carPrice").value = price;
+    document.getElementById("carStatus").value = status;
+    document.getElementById("editId").value = id;
+    document.getElementById("updateBtn").style.display = "inline"; 
+}
+
+function updateCar() {
+    const id = document.getElementById("editId").value;
+    const name = document.getElementById("carName").value.trim();
+    const brand = document.getElementById("carBrand").value.trim();
+    const year = document.getElementById("carYear").value;
+    const price = document.getElementById("carPrice").value;
+    const status = document.getElementById("carStatus").value;
+
+    if (!id || !name || !brand || !year || !price || !status) {
+        alert("Ju lutem plotësoni të gjitha fushat për përditësim!");
+        return;
+    }
+
+    fetch("update.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}&brand=${encodeURIComponent(brand)}&year=${encodeURIComponent(year)}&price=${encodeURIComponent(price)}&status=${encodeURIComponent(status)}`
+    })
+    .then(() => {
+        fetchCars();
+        document.getElementById("editId").value = "";
+        document.getElementById("carName").value = "";
+        document.getElementById("carBrand").value = "";
+        document.getElementById("carYear").value = "";
+        document.getElementById("carPrice").value = "";
+        document.getElementById("carStatus").value = "disponueshme";
+        document.getElementById("updateBtn").style.display = "none"; 
+    })
+    .catch(error => console.error('Gabim gjatë përditësimit të veturës:', error));
+}
+
+function deleteCar(id) {
+    if (confirm("A jeni i sigurt që doni ta fshini këtë veturë?")) {
+        fetch("delete.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `id=${encodeURIComponent(id)}`
+        })
+        .then(() => fetchCars())
+        .catch(error => console.error('Gabim gjatë fshirjes së veturës:', error));
+    }
+}
+
+fetchCars();
+</script>
 
 </body>
