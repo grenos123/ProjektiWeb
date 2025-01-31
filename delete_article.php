@@ -3,16 +3,16 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: DELETE");
 header("Content-Type: application/json");
 
-$conn = new mysqli("localhost", "root", "", "article_db");
+$connection= new mysqli("localhost", "root", "", "article_db");
 
-if ($conn->connect_error) {
+if ($connection->connect_error) {
     die(json_encode(["success" => false, "message" => "Database connection failed"]));
 }
 
 $id = $_GET["id"] ?? null;
 
 if ($id) {
-    $stmt = $conn->prepare("DELETE FROM articles WHERE id=?");
+    $stmt = $connection->prepare("DELETE FROM articles WHERE id=?");
     $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {
@@ -26,5 +26,5 @@ if ($id) {
     echo json_encode(["success" => false, "message" => "Invalid article ID"]);
 }
 
-$conn->close();
+$connection->close();
 ?>

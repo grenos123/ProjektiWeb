@@ -10,7 +10,7 @@ ini_set('display_errors', 1);
 include 'db.php';
 
 $sql = "SELECT * FROM articles ORDER BY created_at DESC";
-$result = $conn->query($sql);
+$result = $connection->query($sql);
 
 $articles = [];
 

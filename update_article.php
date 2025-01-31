@@ -26,5 +26,5 @@ if (!empty($data["id"]) && !empty($data["articleTitle"]) && !empty($data["descri
     echo json_encode(["success" => false, "message" => "All fields are required"]);
 }
 
-$conn->close();
+$connection->close();
 ?>
