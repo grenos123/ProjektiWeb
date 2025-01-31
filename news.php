@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header('Location: login.html');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +17,12 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="home.html"><b>Rent-A-Car02</b></a>
-        <a href="home.html">Home</a>
-        <a href="main.html">Rentals</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="news.html" class="current-page">News</a>
+        <a href="home.php"><b>Swift Rentals</b></a>
+        <a href="home.php">Home</a>
+        <a href="main.php">Rentals</a>
+        <a href="aboutus.php">About Us</a>
+        <a href="contactus.php">Contact Us</a>
+        <a href="news.php" class="current-page">News</a>
         <a href="logout.php">Logout</a>
     </div>
     <iframe src="slider.html" width="100%" height="500px" style="border: none;"></iframe>

@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header('Location: login.html');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +17,12 @@
 </head>
 <body>
     <div class ="navbar">
-        <a href="home.html"><b>Swift Rentals</b></a>
-        <a href="home.html">Home</a>
-        <a href="main.html" class="current-page">Rentals</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="news.html" >News</a>
+        <a href="home.php"><b>Swift Rentals</b></a>
+        <a href="home.php">Home</a>
+        <a href="main.php" class="current-page">Rentals</a>
+        <a href="aboutus.php">About Us</a>
+        <a href="contactus.php">Contact Us</a>
+        <a href="news.php" >News</a>
         <a href="logout.php">Logout</a>
     </div>
     <div class ="main">
@@ -25,7 +33,7 @@
             <p>Engine: 1.6 TDI BlueMotion</p>
             <p>Transmission: DSG 7-Speed</p>
             <p>Reliable & Fuel-efficeint hatchback - Perfect for city driving and long trips.</p>
-            <a href="rent.html"><button class ="purchase-btn">Rent!</button></a>
+            <a href="rent.php"><button class ="purchase-btn">Rent!</button></a>
         </div>
         <div class="car-box">
             <img src="images/Screenshot_2.png">
@@ -34,7 +42,7 @@
             <p>Engine: 2.0 TDI Quattro</p>
             <p>Transmission: 6-Speed Manual</p>
             <p>Luxurious sedan offering a perfect blend of sportiness & performance - With just the right price!</p>
-            <a href="rent.html"><button class ="purchase-btn">Rent!</button></a>
+            <a href="rent.php"><button class ="purchase-btn">Rent!</button></a>
         </div>
         <div class="car-box">
             <img src="images/Screenshot_3.png">
@@ -43,7 +51,7 @@
             <p>Engine: 3.0 TDI</p>
             <p>Transmission: DSG 7-Speed</p>
             <p>Premium sedan with a spacious interior and advanced technology - Elegance & Comfort</p>
-            <a href="rent.html"><button class ="purchase-btn">Rent!</button></a>
+            <a href="rent.php"><button class ="purchase-btn">Rent!</button></a>
         </div>
         <div class="car-box">
             <img src="images/Screenshot_4.png">
@@ -52,7 +60,7 @@
             <p>Engine: 2.2 CDI</p>
             <p>Transmission: 6-Speed Manual</p>
             <p>Classy and compact executive car with a refined driving experience.</p>
-            <a href="rent.html"><button class ="purchase-btn">Rent!</button></a>
+            <a href="rent.php"><button class ="purchase-btn">Rent!</button></a>
         </div>
         <div class="car-box">
             <img src="images/Screenshot_5.png">
@@ -61,7 +69,7 @@
             <p>Engine: 1.9 TDI</p>
             <p>Transmission: DSG 6-Speed</p>
             <p>Midsized sedan with excellent fuel economy & realiabailty thanks to its legendary - 1.9 TDI engine</p>
-            <a href="rent.html"><button class ="purchase-btn">Rent!</button></a>
+            <a href="rent.php"><button class ="purchase-btn">Rent!</button></a>
         </div>
         <div class="car-box">
             <img src="images/Screenshot_6.png">
@@ -70,7 +78,7 @@
             <p>Engine: 1.6</p>
             <p>Transmittion: 5-Speed Manual</p>
             <p>Stylish & Affordable with many advanced safety features - Ideal for commutes or road trips</p>
-            <a href="rent.html"><button class ="purchase-btn">Rent!</button></a>
+            <a href="rent.php"><button class ="purchase-btn">Rent!</button></a>
         </div>
         <div class="car-box">
             <img src="images/Screenshot_7.png">
@@ -79,7 +87,7 @@
             <p>Engine: 2.0 Diesel</p>
             <p>Transmittion: 5-Speed Manual</p>
             <p>Perfect balance of luxury, comfort and off-road readiness - Style & capability</p>
-            <a href="rent.html"><button class ="purchase-btn">Rent!</button></a>
+            <a href="rent.php"><button class ="purchase-btn">Rent!</button></a>
         </div>
         <div class="car-box">
             <img src="images/Screenshot_8.png">
@@ -88,7 +96,7 @@
             <p>Engine: 2.0 TDI Quattro</p>
             <p>Transmittion: 7-Speed DCT S-tronic</p>
             <p>Compact SUV with advanced AWD System with good fuel economy - All-terrain capability</p>
-            <a href="rent.html"><button class ="purchase-btn">Rent!</button></a>
+            <a href="rent.php"><button class ="purchase-btn">Rent!</button></a>
         </div>
         <div class="car-box">
             <img src="images/Screenshot_9.png">
@@ -97,7 +105,7 @@
             <p>Engine: N47 2.0</p>
             <p>Transmittion: 7-Speed Manual</p>
             <p>Refined sporty sedan with cutting-edge features - Dynamic driving with luxury and efficiency. </p>
-            <a href="rent.html"><button class ="purchase-btn">Rent!</button></a>
+            <a href="rent.php"><button class ="purchase-btn">Rent!</button></a>
         </div>
         <div class="car-box">
             <img src="images/Screenshot_10.png">
@@ -106,7 +114,7 @@
             <p>Engine: 2.0 TDI</p>
             <p>Transmittion: 6-Speed Manual</p>
             <p>Combination of practicality and sleek design - Smooth, efficient and comfortable driving. </p>
-            <a href="rent.html"><button class ="purchase-btn">Rent!</button></a>
+            <a href="rent.php"><button class ="purchase-btn">Rent!</button></a>
         </div>
     </div>
     <div class="under">
@@ -128,9 +136,9 @@
         <br>
         <p>Terms & Conditions | Privacy Policy</p>
         <br>
-        <a href="home.html">Home</a>
+        <a href="home.php">Home</a>
         <br>
-        <a href="aboutus.html">About Us</a>
+        <a href="aboutus.php">About Us</a>
     </div>
 
     

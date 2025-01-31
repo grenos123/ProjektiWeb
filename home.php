@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header('Location: login.html');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +16,18 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="home.html"><b>Swift Rentals</b></a>
-        <a href="home.html" class="current-page">Home</a>
-        <a href="main.html">Rentals</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="news.html" >News</a>
+        <a href="home.php"><b>Swift Rentals</b></a>
+        <a href="home.php" class="current-page">Home</a>
+        <a href="main.php">Rentals</a>
+        <a href="aboutus.php">About Us</a>
+        <a href="contactus.php">Contact Us</a>
+        <a href="news.php" >News</a>
         <a href="logout.php">Logout</a>
     </div>
 
     <div class="hero">
         <p>Your go-to car rental stop in ALL of Kosovo.</p>
-        <button><a href="main.html">Check Out Our Fleet</a></button>
+        <button><a href="main.php">Check Out Our Fleet</a></button>
     </div>
 
     <div class="why-choose-us">
@@ -78,9 +86,9 @@
         <br>
         <p>Terms & Conditions | Privacy Policy</p>
         <br>
-        <a href="home.html">Home</a>
+        <a href="home.php">Home</a>
         <br>
-        <a href="aboutus.html">About Us</a>
+        <a href="aboutus.php">About Us</a>
     </div>
 </body>
 </html>
