@@ -30,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssss", $name, $email, $phone, $message);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Message sent successfully!'); window.location.href='contactus.html';</script>";
+        echo "<script>alert('Message sent successfully!'); window.location.href='contactus.php';</script>";
     } else {
-        echo "<script>alert('Error: " . $stmt->error . "'); window.location.href='contactus.html';</script>";
+        echo "<script>alert('Error: " . $stmt->error . "'); window.location.href='contactus.php';</script>";
     }
     $stmt->close();
     $db->close();
