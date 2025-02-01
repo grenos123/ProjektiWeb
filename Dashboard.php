@@ -49,6 +49,27 @@ if ($_SESSION['user_role'] !== 'admin') {
         padding: 20px;
         justify-content: center;
     }
+    .others{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        justify-content: center;
+        box-shadow: 1px 1px 1px 1px grey;
+        margin: 10px;
+    }
+    .others p{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .others a{
+        text-decoration: none;
+        padding: 10px;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        margin: 10px;
+    }
+
 
  
 </style>
@@ -59,6 +80,11 @@ if ($_SESSION['user_role'] !== 'admin') {
         <p>ADMIN DASHBOARD</p>
         <a>Welcome, <em><?php echo $_SESSION['username']; ?></em></a>
     </div>
+    <div class="others">
+        <p>Assign User Roles - </p>
+        <a href="assign.php">Assign Role</a>
+    </div>
+  
 
   
     
