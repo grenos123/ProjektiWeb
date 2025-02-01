@@ -32,16 +32,6 @@ if (!isset($_SESSION['username'])) {
     </div>
     <iframe src="slider.html" width="100%" height="500px" style="border: none;"></iframe>
     <style>
-    body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 .content {
     flex: 1; 
 }
