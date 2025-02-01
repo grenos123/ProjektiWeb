@@ -74,7 +74,7 @@ function validateEmail(email) {
     </div>
     <div class="about">
         <h2>Welcome to SwiftRentals2</h2>
-        <p>We specialize in offering a diverse <a href="main.html">fleet</a> of vehicles, suiting any occasion, from your compact hatchbacks for daily commutes to luxurious sedans to meet your needs.</p>
+        <p>We specialize in offering a diverse <a href="main.php">fleet</a> of vehicles, suiting any occasion, from your compact hatchbacks for daily commutes to luxurious sedans to meet your needs.</p>
         <p>Whether you're traveling for business or simply just wanting a temporary ride, we are here to ensure that your journey is smooth, all with affordable pricings!</p>
         <b>You can find us in the following locations: </b>
         <div class="map-container">
