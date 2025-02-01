@@ -55,7 +55,7 @@ if ($_SESSION['user_role'] !== 'admin') {
 </head>
 <body>
     <div class ="navbar">
-        <a href="home.html"><b>Swift Rentals</b></a>
+        <a href="home.php"><b>Swift Rentals</b></a>
         <p>ADMIN DASHBOARD</p>
         <a>Welcome, <em><?php echo $_SESSION['username']; ?></em></a>
     </div>
