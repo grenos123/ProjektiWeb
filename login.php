@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 class Database {
     private $conn;
 
@@ -28,24 +27,17 @@ class User {
     }
 
     public function login($email, $password) {
-        $stmt = $this->db->prepare("SELECT * FROM registrationfinal WHERE email = ?");
-        $stmt->bind_param("s", $email);
+        $stmt = $this->db->prepare("SELECT * FROM registrationfinal WHERE email = ? AND password = ?");
+        $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-
-            if (password_verify($password, $user['password'])) {
-                setcookie("username", $user['username'], time() + (30 * 24 * 60 * 60), "/", "", true, true);
-                setcookie("user_role", $user['role'], time() + (30 * 24 * 60 * 60), "/", "", true, true);
-                
-                
-                header('Location: main.php');
-                exit();
-            } else {
-                echo "<script>alert('Invalid email or password'); window.location.href='login.html';</script>";
-            }
+            $_SESSION['username'] = $user['username']; 
+            $_SESSION['user_role'] = $user['role'];  
+            header('Location: main.php');
+            exit(); 
         } else {
             echo "<script>alert('Invalid email or password'); window.location.href='login.html';</script>";
         }
