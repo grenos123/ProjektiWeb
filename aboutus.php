@@ -65,6 +65,11 @@ function validateEmail(email) {
         <a href="aboutus.php" class="current-page">About Us</a>
         <a href="contactus.php">Contact Us</a>
         <a href="news.php">News</a>
+        <?php
+        if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') {
+            echo '<a href="Dashboard.php">Admin Dashboard</a>';
+        }
+        ?>
         <a href="logout.php">Logout</a>
     </div>
     <div class="about">
