@@ -141,5 +141,27 @@ if (!isset($_SESSION['username'])) {
           </form>
         </div>
       </div>
+      <div class="under">
+    <h2>Swift Rentals</h2>
+        <p>Your go-to rental stop in ALL of Kosovo</p>
+        <br>
+        <p>Serving you with the best car rentals, reliable customer service, and unbeatable prices.</p>
+        <br>
+        <p>Contact us:</p>
+        <p>Email: support@rentacar02.com</p>
+        <p>Phone: +383 38 541 400</p>
+        <br>
+        <p>Follow us on social media:</p>
+        <p>
+            <a href="https://www.facebook.com/ubthighereducationinstitution" target="_blank">Facebook</a> | 
+            <a href="https://www.instagram.com/ubt_official" target="_blank">Instagram</a> |
+            <a href="https://x.com/UBTEducation" target="_blank">Twitter</a>
+        </p>
+        <br>
+        <p>Terms & Conditions | Privacy Policy</p>
+        <br>
+        <a href="home.php">Home</a>
+        <br>
+        <a href="aboutus.php">About Us</a>
 </body>
 </html>
