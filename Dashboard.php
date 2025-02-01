@@ -1,8 +1,13 @@
 <?php
 session_start();
-if ($_SESSION['user_role'] !== 'admin') {
+if(!isset($_SESSION['username'])){
     header('Location: login.html');
     exit();
+}
+if ($_SESSION['user_role'] !== 'admin') {
+    die("<h1>Access Denied</h1><p>Only admins are allowed to access this page</p>");
+    header('Location: login.html');
+    
 }
 ?>
 
