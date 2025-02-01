@@ -89,6 +89,10 @@ if ($_SESSION['user_role'] !== 'admin') {
         <p>Assign User Roles - </p>
         <a href="assign.php">Assign Role</a>
     </div>
+    <div class="others">
+        <p>Feedback from Contact Us - </p>
+        <a href="feedback.php">Feedback</a>
+    </div>
   
 
   
