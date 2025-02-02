@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header('Location: login.html');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,17 +137,20 @@ textarea {
             const articles = await response.json();
             const output = document.getElementById("article-list");
             output.innerHTML = "";
+            const isAdmin = <?php echo (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') ? 'true' : 'false'; ?>;
             
             articles.forEach(article => {
                 output.innerHTML += `<div class='article-item'>
-                    <h3>${article.article_title}</h3>
-                    <p>${article.description}</p>
-                    <p>Added by: ${article.author_name} (${article.author_email})</p>
-                    <button class='edit-btn' onclick='editArticle(${article.id})'>Edit</button>
-                    <button class='delete-btn' onclick='deleteArticle(${article.id})'>Delete</button>
+                <h3>${article.article_title}</h3>
+                <p>${article.description}</p>
+                <p>Added by: ${article.author_name} (${article.author_email})</p>
+                ${isAdmin ? `
+                <button class='edit-btn' onclick='editArticle(${article.id})'>Edit</button>
+                <button class='delete-btn' onclick='deleteArticle(${article.id})'>Delete</button>
+                ` : ''}
                 </div>`;
             });
-        }
+}
 
         async function deleteArticle(id) {
             await fetch(`delete_article.php?id=${id}`, { method: "DELETE" });
@@ -163,7 +173,7 @@ textarea {
         document.addEventListener("DOMContentLoaded", fetchArticles);
     </script>
 
-<body>
+<?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'): ?>
     <div class="container">
         <h2>Post Article</h2>
         <form onsubmit="handleSubmit(event)">
@@ -178,6 +188,7 @@ textarea {
             <button type="submit" class="btn">POST ARTICLE</button>
         </form>
     </div>
+    <?php endif; ?>
     <div id="article-list" class="article-list"></div>
     <div class="under">
         <h2>Swift Rentals</h2>
