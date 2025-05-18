@@ -21,8 +21,10 @@ if (!isset($_SESSION['username'])) {
             const phoneNumber = document.getElementById("phoneNumber").value;
             const email = document.getElementById("email").value;
             
-            if (name != null || lastname != null || phoneNumber != null || email != null) {
-                alert("Data submitted, an email will be sent to you to confirm!");
+            if(name && lastname && phoneNumber && email){
+                event.target.submit();
+            }else{
+                alert("Please fill in all required fields.");
             }
             
            
@@ -47,7 +49,7 @@ if (!isset($_SESSION['username'])) {
     </div>
     <div class="reservation-container">
         <h2>Reserve your Rental</h2>
-        <form class="reservation-form" method="POST" onsubmit="submitForm(event)">
+        <form class="reservation-form" method="POST" action="reserve.php" onsubmit="submitForm(event)">
             <div class="form-group">
                 <label for="firstName">First Name</label>
                 <input type="text" id="firstName" name="firstName" placeholder="Your first name..." required>
